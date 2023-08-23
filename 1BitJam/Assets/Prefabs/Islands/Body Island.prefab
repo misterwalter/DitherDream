@@ -178,7 +178,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6856501910872829870}
   - component: {fileID: 807839594895497155}
-  - component: {fileID: 980483879090748240}
   m_Layer: 0
   m_Name: Body Island
   m_TagString: Untagged
@@ -215,19 +214,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3835cfa907cb9004cae12a2a92dd3032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectScatter: {fileID: 980483879090748240}
---- !u!114 &980483879090748240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6050516076467269010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de0a92dd07f7564a90488bc2dfe71a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scatterPlacements:

@@ -151,7 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3835cfa907cb9004cae12a2a92dd3032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScatter: {fileID: 0}
+  scatterPlacements: []
+  scatterCount: 0
+  scatterRoot: {fileID: 0}
+  portal: {fileID: 0}
+  spawnRadius: 10
 --- !u!1001 &4591816778301879216
 PrefabInstance:
   m_ObjectHideFlags: 0

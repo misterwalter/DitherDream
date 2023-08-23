@@ -15,9 +15,9 @@ public class Portal : MonoBehaviour
     {
         // Respawn portal if/when it falls down past the island
         // It's easier than sampling a valid spot, and in this specific case in this specific game it really doesn't matter if it shows up late.
-        if (transform.position.y < ObjectScatter.respawnFloor) {
+        if (transform.position.y < Island.respawnFloor) {
             Vector3 newPosition = Random.insideUnitSphere.normalized*GameManager.instance.currentIsland.spawnRadius;
-            newPosition.y = ObjectScatter.maxSpawnHeight;
+            newPosition.y = Island.maxSpawnHeight;
             transform.position = newPosition;
             renderer.enabled = false;   // make sure it's not visible for a single frame at the start;
         } else renderer.enabled = rb.velocity.magnitude < 1f;   // conceal portal while it falls

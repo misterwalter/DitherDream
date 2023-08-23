@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4364047934884123946}
   - component: {fileID: 32185961003609719}
-  - component: {fileID: 8767436201766935219}
   m_Layer: 0
   m_Name: Canyon Island
   m_TagString: Untagged
@@ -151,19 +150,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3835cfa907cb9004cae12a2a92dd3032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectScatter: {fileID: 8767436201766935219}
---- !u!114 &8767436201766935219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3150381391028940091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de0a92dd07f7564a90488bc2dfe71a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scatterPlacements:

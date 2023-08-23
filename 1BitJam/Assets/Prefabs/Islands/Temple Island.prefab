@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1353825160923288417}
   - component: {fileID: 3544617147669193795}
-  - component: {fileID: 719706359401024182}
   m_Layer: 0
   m_Name: Temple Island
   m_TagString: Untagged
@@ -151,19 +150,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3835cfa907cb9004cae12a2a92dd3032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectScatter: {fileID: 719706359401024182}
---- !u!114 &719706359401024182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 854208333241685954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de0a92dd07f7564a90488bc2dfe71a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scatterPlacements:

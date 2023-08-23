@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Respawn player if they fall off.
-        if (playerObject.transform.position.y < ObjectScatter.respawnFloor || Input.GetKeyDown(KeyCode.Backspace)) {
+        if (playerObject.transform.position.y < Island.respawnFloor || Input.GetKeyDown(KeyCode.Backspace)) {
             RespawnPlayer();
         }
 
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
      */
     public static void RespawnPlayer() {
         Vector3 playerSpawn = Random.insideUnitSphere*instance.currentIsland.spawnRadius*.75f;
-        playerSpawn.y = ObjectScatter.maxSpawnHeight;
+        playerSpawn.y = Island.maxSpawnHeight;
         instance.playerObject.transform.position = playerSpawn;
     }
 }
