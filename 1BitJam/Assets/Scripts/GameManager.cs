@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    Overall game controller - flows between levels, exits, etc, etc
+ */
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [Tooltip("The prefab to spawn in as a portal once per island")]
     public GameObject portalType;
 
     public int islandIndex = -1;    // start at tutorial, then go to zero, then count up forever
@@ -21,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Image exitX;
     public Image exitBackground;
     public float exitDelay, exitTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +35,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerObject.transform.position.y < -100 || Input.GetKeyDown(KeyCode.Backspace)) {
+        // Respawn player if they fall off.
+        if (playerObject.transform.position.y < ObjectScatter.respawnFloor || Input.GetKeyDown(KeyCode.Backspace)) {
             RespawnPlayer();
         }
 
@@ -46,11 +52,17 @@ public class GameManager : MonoBehaviour
             exitX.fillAmount = exitTimer;
     }
 
+    /*
+        Marks the completion of the current level...I thought there would be more here
+     */
     public static void CompleteLevel() {
-        instance.ResetLevel();
+        instance.GoToNextLevel();
     }
 
-    public void ResetLevel() {
+    /*
+        Transitions the game to the next level in the cycle, resetting everything as needed
+     */
+    public void GoToNextLevel() {
         ++islandIndex;
 
         //clear away old island
@@ -65,6 +77,9 @@ public class GameManager : MonoBehaviour
         RespawnPlayer();
     }
 
+    /*
+        Bring the player back up to randomly fall down onto the island, resetting them
+     */
     public static void RespawnPlayer() {
         Vector3 playerSpawn = Random.insideUnitSphere*instance.currentIsland.spawnRadius*.75f;
         playerSpawn.y = ObjectScatter.maxSpawnHeight;

@@ -14,6 +14,7 @@ public class ObjectScatter : MonoBehaviour
     public Portal portal;
     public float spawnRadius;
     public static float maxSpawnHeight = 100f;
+    public static float respawnFloor = -100f;
 
     [System.Serializable]
     public class ScatterPlacement {
