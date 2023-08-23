@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 /*
-    Scatters objects more or less randomly, with a few filtering restrictions
+    Scatters objects more or less randomly around itself, with a few filtering restrictions
  */
 public class Island : MonoBehaviour
 {
@@ -16,6 +16,9 @@ public class Island : MonoBehaviour
     public static float maxSpawnHeight = 100f;
     public static float respawnFloor = -100f;
 
+    /*
+        Data class defining particulars of how one type of object should be applied to the island.
+     */
     [System.Serializable]
     public class ScatterPlacement {
         [Tooltip("Object type to spawn")]
@@ -34,6 +37,7 @@ public class Island : MonoBehaviour
         [Tooltip("Options for rotation setting on spawn.\nNone: Upright standard rotation.\nUpright: Spin around Y axis randomly.\nRandom: Fully random rotation on all 3 axis.")]
         public RotationOnSpawn rotationOnSpawn;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +48,9 @@ public class Island : MonoBehaviour
         StartCoroutine(PrivatePlaceScatterables());
     }
 
+    /*
+        Placing all of these things in a single frame feels like asking for a lag spike, even if it is a pretty lightweight game overall.
+     */
     public IEnumerator PrivatePlaceScatterables() {
         // clear previous
         for (int i = scatterRoot.transform.childCount-1; i >= 0; --i) {
