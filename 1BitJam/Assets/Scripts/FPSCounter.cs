@@ -16,6 +16,6 @@ public class FPSCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = 1f/Time.deltaTime + " fps";
+        text.text = (int)(1f/Time.deltaTime) + " fps";
     }
 }
