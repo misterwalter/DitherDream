@@ -20,7 +20,7 @@ public class Portal : MonoBehaviour
             newPosition.y = Island.maxSpawnHeight;
             transform.position = newPosition;
             renderer.enabled = false;   // make sure it's not visible for a single frame at the start;
-        } else renderer.enabled = rb.velocity.magnitude < 1f;   // conceal portal while it falls
+        } else renderer.enabled = rb.velocity.magnitude < .0001f;   // conceal portal while it falls
     }
 
 
