@@ -74,3 +74,4 @@ crashlytics-build.properties
 # Ignore asset store/itch plugins that I don't have the rights to distribute
 1BitJam/Assets/Mini First Person Controller*
 1BitJam/Assets/WebGLTemplates*
+1BitJam/Assets/StarterAssets*

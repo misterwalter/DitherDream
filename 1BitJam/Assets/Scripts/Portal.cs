@@ -31,7 +31,7 @@ public class Portal : MonoBehaviour
      */
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponentInParent<FirstPersonMovement>()) {
+        if (other.gameObject.GetComponentInParent<CharacterController>()) {
             Debug.Log("RESTART LEVEL, GOOD JOB!");
             GameManager.CompleteLevel();
         } else if (other.gameObject.transform.name != "Ground") {
