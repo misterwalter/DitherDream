@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scatterPlacements: []
   scatterCount: 0
-  scatterRoot: {fileID: 0}
+  scatterRoot: {fileID: 6911964307580865323}
   portal: {fileID: 0}
   spawnRadius: 10
 --- !u!1001 &4591816778301879216
