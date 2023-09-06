@@ -4982,7 +4982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2414261891700759444}
-  renderer: {fileID: 8397555901282271264}
+  portalRenderer: {fileID: 8397555901282271264}
 --- !u!136 &8740518983870614503
 CapsuleCollider:
   m_ObjectHideFlags: 0

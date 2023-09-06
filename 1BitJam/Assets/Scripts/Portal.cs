@@ -8,7 +8,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public Rigidbody rb;
-    public Renderer renderer;
+    public Renderer portalRenderer;
 
     // Update is called once per frame
     void Update()
@@ -19,8 +19,8 @@ public class Portal : MonoBehaviour
             Vector3 newPosition = Random.insideUnitSphere.normalized*GameManager.instance.currentIsland.spawnRadius;
             newPosition.y = Island.maxSpawnHeight;
             transform.position = newPosition;
-            renderer.enabled = false;   // make sure it's not visible for a single frame at the start;
-        } else renderer.enabled = rb.velocity.magnitude < .0001f;   // conceal portal while it falls
+            portalRenderer.enabled = false;   // make sure it's not visible for a single frame at the start;
+        } else portalRenderer.enabled = rb.velocity.magnitude < .0001f;   // conceal portal while it falls
     }
 
 
