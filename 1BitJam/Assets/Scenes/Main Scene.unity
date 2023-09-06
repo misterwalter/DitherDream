@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 638461927}
   - component: {fileID: 638461926}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Exit Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -592,6 +592,7 @@ MonoBehaviour:
   - {fileID: 5914526937616432760, guid: 47e42e4178b6caa47b68cf4f2aa77cad, type: 3}
   - {fileID: 807839594895497155, guid: f1d5adcf9202def4280a15e07205dae6, type: 3}
   - {fileID: 3544617147669193795, guid: 3fd9b7daa8bc9ec44b327a0900c046d4, type: 3}
+  tutorialIslandType: {fileID: 0}
   currentIsland: {fileID: 392963362}
   terrainMask:
     serializedVersion: 2
