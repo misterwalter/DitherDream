@@ -40,11 +40,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Respawn player if they fall off.
-        if (playerObject.transform.position.y < Island.respawnFloor || Input.GetKeyDown(KeyCode.Backspace)) {
-            RespawnPlayer();
-        }
-
         // Exit UI
         if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Tab)) {
             exitTimer += Time.deltaTime;
