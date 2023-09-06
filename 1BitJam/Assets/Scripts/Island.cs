@@ -13,6 +13,7 @@ public class Island : MonoBehaviour
     public Transform scatterRoot;
     public Portal portal;
     public float spawnRadius;
+    public Transform playerStart;
     public static float maxSpawnHeight = 100f;
     public static float respawnFloor = -100f;
 
@@ -56,19 +57,20 @@ public class Island : MonoBehaviour
         for (int i = scatterRoot.transform.childCount-1; i >= 0; --i) {
             Destroy(scatterRoot.transform.GetChild(i).gameObject);
         }
-        portal = null;
 
         // Place portal - let physics and respawning sort it out
-        Vector3 spawnPosition = Random.insideUnitSphere.normalized*spawnRadius/2;
-        spawnPosition.y = maxSpawnHeight;
-        portal = Instantiate(GameManager.instance.portalType, spawnPosition, Quaternion.identity, scatterRoot.transform).GetComponent<Portal>();
+        if (!portal) {
+            Vector3 spawnPosition = Random.insideUnitSphere.normalized*spawnRadius/2;
+            spawnPosition.y = maxSpawnHeight;
+            portal = Instantiate(GameManager.instance.portalType, spawnPosition, Quaternion.identity, scatterRoot.transform).GetComponent<Portal>();
+        }
 
 
         // Scatter stuff!
         for (int i = 0; i < scatterPlacements.Length; ++i) {
             //Debug.Log("Attempting to place: " + scatterPlacements[i].objectType.transform.name);
             for (int c = 0; c < scatterCount; ++c) {
-                spawnPosition = Random.insideUnitSphere.normalized*spawnRadius;
+                Vector3 spawnPosition = Random.insideUnitSphere.normalized*spawnRadius;
                 spawnPosition.y = maxSpawnHeight;
                 RaycastHit hit;
                 //Debug.Log("Attempting to place: " + scatterPlacements[i].objectType.transform.name + " @ " + spawnPosition);

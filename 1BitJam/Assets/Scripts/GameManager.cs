@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int islandIndex = -1;    // start at tutorial, then go to zero, then count up forever
     public int nextIsland;
     public Island[] islandTypes;
+    public Island tutorialIslandType;
     public Island currentIsland;
 
     [Tooltip("Layermask that should only select terrain")]
@@ -30,6 +31,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+
+        // Spawn tutorial island
+        currentIsland = Instantiate(tutorialIslandType).GetComponent<Island>();
+        RespawnPlayer();
     }
 
     // Update is called once per frame
@@ -66,12 +71,17 @@ public class GameManager : MonoBehaviour
         ++islandIndex;
 
         //clear away old island
-        Destroy(currentIsland.gameObject);
+        if (currentIsland) {
+            Debug.Log("Destroying old island: " + currentIsland.transform.name);
+            Destroy(currentIsland.gameObject);
+        }
+        
 
         // spawn new island
         nextIsland = islandIndex%islandTypes.Length;
         Debug.Log("Island index == " + islandIndex + " :: " + nextIsland);
         currentIsland = Instantiate(islandTypes[nextIsland]).GetComponent<Island>();
+        Debug.Log("Welcome to the new island: " + currentIsland.transform.name);
 
         // place player
         RespawnPlayer();
@@ -81,8 +91,14 @@ public class GameManager : MonoBehaviour
         Bring the player back up to randomly fall down onto the island, resetting them
      */
     public static void RespawnPlayer() {
-        Vector3 playerSpawn = Random.insideUnitSphere*instance.currentIsland.spawnRadius*.75f;
-        playerSpawn.y = Island.maxSpawnHeight;
-        instance.playerObject.transform.position = playerSpawn;
+        Debug.Log("Respawning player");
+        if (instance.currentIsland.playerStart) {
+            instance.playerObject.transform.position = instance.currentIsland.playerStart.position;
+            instance.playerObject.transform.rotation = instance.currentIsland.playerStart.rotation;
+        } else {
+            Vector3 playerSpawn = Random.insideUnitSphere*instance.currentIsland.spawnRadius*.75f;
+            playerSpawn.y = Island.maxSpawnHeight;
+            instance.playerObject.transform.position = playerSpawn;
+        }
     }
 }

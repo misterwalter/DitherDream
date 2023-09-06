@@ -31,6 +31,7 @@ public class Portal : MonoBehaviour
      */
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("On Portal Enter: " + other.transform.name);
         if (other.gameObject.GetComponentInParent<CharacterController>()) {
             Debug.Log("RESTART LEVEL, GOOD JOB!");
             GameManager.CompleteLevel();
