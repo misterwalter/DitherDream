@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         // Respawn player if they fall off - or if debug key is pressed
-        Debug.Log("Player Y: " + transform.position.y);
         if (transform.position.y < Island.respawnFloor || Input.GetKeyDown(KeyCode.Backspace)) {
             GameManager.RespawnPlayer();
         }
