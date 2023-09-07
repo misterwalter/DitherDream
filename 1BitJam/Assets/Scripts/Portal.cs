@@ -19,8 +19,9 @@ public class Portal : MonoBehaviour
             Vector3 newPosition = Random.insideUnitSphere.normalized*GameManager.instance.currentIsland.spawnRadius;
             newPosition.y = Island.maxSpawnHeight;
             transform.position = newPosition;
+            rb.isKinematic = false;
             portalRenderer.enabled = false;   // make sure it's not visible for a single frame at the start;
-        } else portalRenderer.enabled = rb.velocity.magnitude < .0001f;   // conceal portal while it falls
+        } else portalRenderer.enabled = rb.velocity.magnitude < .01f;   // conceal portal while it falls
     }
 
 
@@ -35,8 +36,10 @@ public class Portal : MonoBehaviour
         if (other.gameObject.GetComponentInParent<CharacterController>()) {
             Debug.Log("RESTART LEVEL, GOOD JOB!");
             GameManager.CompleteLevel();
-        } else if (other.gameObject.transform.name != "Ground") {
-            Destroy(other.gameObject);  // crash to the ground
+        } else if (other.gameObject.transform.name == "Ground") {
+            rb.isKinematic = true; // stop on the ground
+        } else {        // crash to the ground through other expendable objects
+            Destroy(other.gameObject);
         }
         
     }
