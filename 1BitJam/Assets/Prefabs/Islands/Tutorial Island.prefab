@@ -183,6 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3835cfa907cb9004cae12a2a92dd3032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foreColor1: {r: 0.012281928, g: 0.8419939, b: 0.8679245, a: 1}
+  foreColor2: {r: 0, g: 0.3769771, b: 0.8490566, a: 1}
+  backColor1: {r: 1, g: 0.7129014, b: 0, a: 1}
+  backColor2: {r: 1, g: 0.5568712, b: 0, a: 1}
   scatterPlacements: []
   scatterCount: 0
   scatterRoot: {fileID: 6911964307580865323}

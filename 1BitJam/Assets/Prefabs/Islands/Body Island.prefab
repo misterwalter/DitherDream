@@ -216,6 +216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3835cfa907cb9004cae12a2a92dd3032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foreColor1: {r: 0.6037736, g: 0.3881657, b: 0, a: 1}
+  foreColor2: {r: 0.8867924, g: 0.2485652, b: 0.2216981, a: 1}
+  backColor1: {r: 0.4433962, g: 0.1912566, b: 0.0020914965, a: 1}
+  backColor2: {r: 0.2735849, g: 0.1178722, b: 0.0038714774, a: 1}
   scatterPlacements:
   - objectType: {fileID: 5797674517831768846, guid: e4d3eeba7cfaffe46b49d6975ad312e6, type: 3}
     minElevation: -100
@@ -236,6 +240,7 @@ MonoBehaviour:
   scatterRoot: {fileID: 3880790313649783169}
   portal: {fileID: 0}
   spawnRadius: 100
+  playerStart: {fileID: 0}
 --- !u!1 &6790569385176154939
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,12 @@ using UnityEditor;
  */
 public class Island : MonoBehaviour
 {
+    [Header("Colors")]
+    public Color foreColor1;
+    public Color foreColor2;
+    public Color backColor1;
+    public Color backColor2;
+
     public ScatterPlacement[] scatterPlacements;
     public int scatterCount;
     public Transform scatterRoot;
@@ -43,6 +49,7 @@ public class Island : MonoBehaviour
     void Start()
     {
         PlaceScatterables();
+        SetRenderSettings();
     }
 
     public void PlaceScatterables() {
@@ -96,6 +103,13 @@ public class Island : MonoBehaviour
         }
         yield return null;
     }
+
+    public void SetRenderSettings() {
+        Shader.SetGlobalColor("_ForeColor1", foreColor1);
+        Shader.SetGlobalColor("_ForeColor2", foreColor2);
+        Shader.SetGlobalColor("_BackColor1", backColor1);
+        Shader.SetGlobalColor("_BackColor2", backColor2);
+    }
 }
 
 /*
@@ -109,6 +123,9 @@ public class IslandEditor : Editor {
 
         if (GUILayout.Button("Place")) {
             ((Island)target).PlaceScatterables();
+        }
+        if (GUILayout.Button("Render Settings")) {
+            ((Island)target).SetRenderSettings();
         }
     }
 }

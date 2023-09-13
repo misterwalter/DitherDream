@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08479894, g: 0.08479894, b: 0.08479894, a: 1}
+  m_IndirectSpecularColor: {r: -0.13115597, g: -0.13115597, b: -0.13115597, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 611, y: -580.1}
+  m_AnchoredPosition: {x: 553.5, y: -512.6}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &38521930
@@ -780,7 +780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 611, y: -274.5}
+  m_AnchoredPosition: {x: 553.5, y: -237}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431334664
@@ -1797,7 +1797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -51.1}
+  m_AnchoredPosition: {x: 0, y: -51.100006}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1378398267
@@ -2364,7 +2364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 611, y: -196.70001}
+  m_AnchoredPosition: {x: 553.5, y: -174.2}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1756590611
@@ -2818,7 +2818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 611, y: -78.9}
+  m_AnchoredPosition: {x: 553.5, y: -71.399994}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2007901609
@@ -2965,10 +2965,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2039151813}
+  - component: {fileID: 2039151814}
   - component: {fileID: 2039151812}
   - component: {fileID: 2039151811}
   - component: {fileID: 2039151810}
-  - component: {fileID: 2039151814}
   m_Layer: 5
   m_Name: Start Menu
   m_TagString: Untagged
@@ -3026,8 +3026,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_Camera: {fileID: 943389471}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3074,6 +3074,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151fdd4e893a6c648b9082500cf26e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorSampleIsland: {fileID: 3557069579272577515, guid: 6641c8b8e213e3749add37675a6f6f93, type: 3}
+  pixelFactor: 100
 --- !u!1 &2086600517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,7 +3109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 611, y: -392.30002}
+  m_AnchoredPosition: {x: 553.5, y: -339.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2087131278
